@@ -5,27 +5,40 @@
 
 using namespace std;
 
-int maxNumber; // Maximum number for random generation
-int minNumber; // Minimum number for random generation
+void pause(int seconds) {
+    this_thread::sleep_for(chrono::seconds(seconds));
+}
 
 int rng() {
-    cout << "Enter the minimum number: ";
-    cin >> minNumber; // Input minimum number
-    cout << "Enter the maximum number: ";
-    cin >> maxNumber; // Input maximum number
+    int minNumber, maxNumber;
+    cout << "You could've just gone to google to generate a random number.. \n";
+    pause(1);
+    cout << "But since you're here, let's do it anyway. \n";
+    pause(1);
+    cout << "Enter your minimum number: ";
+    cin >> minNumber;
+    pause(1);
+    cout << "Enter your maximum number: ";
+    cin >> maxNumber;
+    pause(1);
 
-    random_device rd; // Obtain a random number from hardware
-    mt19937 gen(rd());  // Seed the generator with a random device
-    uniform_int_distribution<> dist(minNumber, maxNumber); // Define the range
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(minNumber, maxNumber);
 
     int random_number = dist(gen);
     cout << "Your random number is: \n";
     for (int i = 5; i > 0; --i) {
         cout << i << "...\n";
-        this_thread::sleep_for(chrono::seconds(1)); // Sleep for 1 second
+        pause(1);
     }
-    this_thread::sleep_for(chrono::seconds(1));
-    cout << "\n" << random_number << endl; // Output the random number
+    pause(1);
+    cout << "\n" << random_number << endl;
 
+    return 0;
+}
+
+int main() {
+    rng(); // Call the function here
     return 0;
 }
