@@ -54,6 +54,11 @@ int rng() {
     cout << "Your random number is:\n";
     pause(1);
     cout << "\n" << random_number << endl;
+    pause(1);
+    cout << "Press Enter to exit.\n";
+    cin.ignore();
+    cin.get();
+    cout << "Exiting...\n";
 
     return 0;
 }
