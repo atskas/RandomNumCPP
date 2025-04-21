@@ -1,6 +1,6 @@
 # Random Number Generator
 
-Not much you can do with a random number generator, really.
+Not much you can do with a random number generator that's unique, really.
 
 ## Features
 
