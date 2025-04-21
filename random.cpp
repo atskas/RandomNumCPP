@@ -2,6 +2,7 @@
 #include <random>
 #include <chrono> 
 #include <thread> 
+#include <limits>
 
 using namespace std;
 
@@ -9,17 +10,40 @@ void pause(int seconds) {
     this_thread::sleep_for(chrono::seconds(seconds));
 }
 
+int getIntInput(const string& prompt) {
+    int value;
+    while (true) {
+        cout << prompt;
+        cin >> value;
+
+        if (!cin.fail()) {
+            return value;
+        }
+
+        cout << "Invalid input. Please enter a number.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
+
 int rng() {
-    int minNumber, maxNumber;
-    cout << "You could've just gone to google to generate a random number.. \n";
+    cout << "You could've just gone to google to generate a random number..\n";
     pause(1);
-    cout << "But since you're here, let's do it anyway. \n";
+    cout << "But since you're here, let's do it anyway.\n";
     pause(1);
-    cout << "Enter your minimum number: ";
-    cin >> minNumber;
+
+    int minNumber = getIntInput("Enter your minimum number: ");
     pause(1);
-    cout << "Enter your maximum number: ";
-    cin >> maxNumber;
+
+    int maxNumber;
+    while (true) {
+        maxNumber = getIntInput("Enter your maximum number: ");
+        if (maxNumber >= minNumber) {
+            break;
+        }
+        cout << "Maximum number must be greater than or equal to minimum number. Try again.\n";
+    }
+
     pause(1);
 
     random_device rd;
@@ -27,11 +51,7 @@ int rng() {
     uniform_int_distribution<> dist(minNumber, maxNumber);
 
     int random_number = dist(gen);
-    cout << "Your random number is: \n";
-    for (int i = 5; i > 0; --i) {
-        cout << i << "...\n";
-        pause(1);
-    }
+    cout << "Your random number is:\n";
     pause(1);
     cout << "\n" << random_number << endl;
 
@@ -39,6 +59,6 @@ int rng() {
 }
 
 int main() {
-    rng(); // Call the function here
+    rng();
     return 0;
 }
