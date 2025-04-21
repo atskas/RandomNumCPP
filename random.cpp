@@ -5,10 +5,15 @@
 
 using namespace std;
 
-int maxNumber = 100; // Default maximum number for random generation
-int minNumber = 1; // Default minimum number for random generation
+int maxNumber; // Maximum number for random generation
+int minNumber; // Minimum number for random generation
 
-int main() {
+int rng() {
+    cout << "Enter the minimum number: ";
+    cin >> minNumber; // Input minimum number
+    cout << "Enter the maximum number: ";
+    cin >> maxNumber; // Input maximum number
+
     random_device rd; // Obtain a random number from hardware
     mt19937 gen(rd());  // Seed the generator with a random device
     uniform_int_distribution<> dist(minNumber, maxNumber); // Define the range
