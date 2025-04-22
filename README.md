@@ -7,6 +7,11 @@ Simple random number generator with a clean windows-xp style UI
 - Allows the user to specify minimum and maximum numbers for the r.n.g
 - And generates well, I guess.
 
+## Known bugs
+
+- Text sometimes cuts off depending on display size which affects window size
+- UI doesn't scale with window at the moment, restricted window size
+
 
 
 **Version 2.0**
