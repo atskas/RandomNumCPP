@@ -46,9 +46,9 @@ int rng() {
 
     pause(1);
 
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dist(minNumber, maxNumber);
+    random_device rd; // Random device to seed the generator
+    mt19937 gen(rd()); // Seed the random number generator with a random device
+    uniform_int_distribution<> dist(minNumber, maxNumber); // Uniform distribution between minNumber and maxNumber
 
     int random_number = dist(gen);
     cout << "Your random number is:\n";
