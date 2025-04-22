@@ -8,6 +8,7 @@ Simple random number generator with a clean windows-xp style UI
 - And generates well, I guess.
 
 
+
 **Version 2.0**
 
 ![ui](https://github.com/user-attachments/assets/e716ee6b-9edf-428f-a673-419f9c0ee3db)
