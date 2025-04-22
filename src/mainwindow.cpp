@@ -38,8 +38,8 @@ void MainWindow::on_maximumInput_editingFinished()
 {
     maximumValue = ui->maximumInput->text().toInt();  // Try conversion
     if (ui->maximumInput->text().isEmpty() || maximumValue == 0) {
-        ui->maximumInput->setText("5");
-        maximumValue = 5;
+        ui->maximumInput->setText("0");
+        maximumValue = 0;
     }
 
     if (minimumValue > maximumValue) {

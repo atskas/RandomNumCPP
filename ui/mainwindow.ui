@@ -40,7 +40,7 @@
      <rect>
       <x>600</x>
       <y>30</y>
-      <width>131</width>
+      <width>201</width>
       <height>16</height>
      </rect>
     </property>
@@ -95,7 +95,7 @@
      <rect>
       <x>600</x>
       <y>120</y>
-      <width>121</width>
+      <width>201</width>
       <height>16</height>
      </rect>
     </property>
@@ -190,7 +190,7 @@ QPushButton:pressed {
      <rect>
       <x>600</x>
       <y>200</y>
-      <width>161</width>
+      <width>201</width>
       <height>16</height>
      </rect>
     </property>
@@ -213,7 +213,7 @@ QPushButton:pressed {
      <rect>
       <x>40</x>
       <y>10</y>
-      <width>171</width>
+      <width>531</width>
       <height>16</height>
      </rect>
     </property>
